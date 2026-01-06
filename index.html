@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+      }
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      button {
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      .wrap {
+        padding: 3rem;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      body {
+        background-color: rgb(245, 242, 238);
+      }
+      pre {
+        /* outline: 1px solid rgba(0, 128, 0, 0.304); */
+        outline: 2px solid #d0d7e2;
+
+        /* background-color: rgba(172, 255, 47, 0.188); */
+        background-color: #ffffff;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 2rem;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: 0px 0px 40px #1f293723;
+      }
+
+      input#name,
+      input#email,
+      input#password {
+        outline: none;
+        border: none;
+        padding: 5px;
+        /* outline: 2px solid lightgreen; */
+        outline: 1px solid #d0d7e2;
+
+        border-radius: 5px;
+      }
+
+      textarea#textarea {
+        border: none;
+        outline: none;
+        /* outline: 2px solid lightgreen; */
+        outline: 1px solid #d0d7e2;
+
+        border-radius: 10px;
+        min-width: 15rem;
+        min-height: 10rem;
+        max-width: 15rem;
+        max-height: 14rem;
+        overflow-y: hidden;
+      }
+
+      textarea {
+        padding: 10px;
+        font-size: 0.88rem;
+        font-family: sans-serif;
+      }
+
+      p {
+        font-size: 1.05rem;
+        font-weight: bold;
+        font-family: sans-serif;
+        margin-bottom: -10px;
+        color: #1f2937;
+        letter-spacing: 1.5px;
+      }
+
+      button {
+        /* outline: 2px solid rgb(94, 224, 94); */
+        outline: 1px solid #d0d7e2;
+        padding: 0.5rem 1rem;
+        border-radius: 7px;
+        color: rgb(32, 31, 31);
+        /* background-color: lightgreen;
+         */
+        background-color: #f5f7fa;
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <form id="myForm" action="post">
+        <pre>
+        <p>Name:</p><input type="text" id="name" placeholder="Enter your name" required />
+       <p>Email:</p> <input type="email" id="email" placeholder="Enter your email" required />
+       <p>Password:</p> <input type="password" id="password" placeholder="Enter your password" required />
+        <p>Suggestions:</p><textarea name="text" id="textarea" cols="30" rows="10" placeholder="Any Suggestions?"></textarea>
+        <button>Submit</button>
+        </pre>
+      </form>
+    </div>
+  </body>
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  var textarea = document.getElementById("textarea").value;
+
+  document.body.innerHTML +=
+    "<div>" +
+      "<p>Name: " + name + "</p>" +
+      "<p>Email: " + email + "</p>" +
+      "<p>Password: " + password + "</p>" +
+      "<p>Message: " + textarea + "</p>" +
+      "<hr>" +
+    "</div>";
+});
+
+    
+  </script>
+</html>
